@@ -54,3 +54,14 @@ export const login = async (req, res) => {
     return res.status(400).send("Error, Try again.");
   }
 };
+
+export const currentUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id);
+    // res.json(user);
+    res.json({ ok: true });
+  } catch (err) {
+    // console.log(err);
+    res.sendStatus(400);
+  }
+};
