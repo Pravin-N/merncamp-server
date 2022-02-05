@@ -15,6 +15,8 @@ import {
   newsFeed,
   likePost,
   unlikePost,
+  addComment,
+  removeComment,
 } from "../controllers/post";
 
 router.post("/create-post", requireSignin, createPost);
@@ -39,5 +41,8 @@ router.get("/news-feed", requireSignin, newsFeed);
 
 router.put("/like-post", requireSignin, likePost);
 router.put("/unlike-post", requireSignin, unlikePost);
+
+router.put("/add-comment", requireSignin, addComment);
+router.put("/remove-comment", requireSignin, removeComment);
 
 module.exports = router;
