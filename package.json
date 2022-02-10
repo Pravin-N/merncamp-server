@@ -7,7 +7,7 @@
     "start": "nodemon -r esm server.js"
   },
   "engines": {
-    "node": "16.x"
+    "node": "16.14.0"
   },
   "keywords": [],
   "author": "",
