@@ -1,5 +1,5 @@
 import express from "express";
-import { requireSignin } from "../middlewares";
+import { requireSignin, isAdmin } from "../middlewares";
 
 const router = express.Router();
 
@@ -34,5 +34,7 @@ router.get("/user-following", requireSignin, userFollowing);
 
 router.get("/search-user/:query", searchUser);
 router.get("/user/:username", getUser);
+
+router.get("/current-admin/", requireSignin, isAdmin, currentUser);
 
 module.exports = router;
